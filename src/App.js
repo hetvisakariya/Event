@@ -9,27 +9,29 @@ import Login from "./pages/Login";
 
 function App() {
   return (
-    <div className="min-h-screen bg-gray-100 text-gray-900">
-      <nav className="bg-blue-600 text-white p-4">
+    <div className="min-h-screen bg-white text-black">
+      <nav className="bg-white text-black p-4 shadow">
         <div className="flex justify-between items-center">
-          <ul className="flex gap-4">
+          <ul className="flex gap-4 font-medium">
             <li><Link to="/">Home</Link></li>
             <li><Link to="/events">Events</Link></li>
           </ul>
-          <Link to="/login" className="bg-white text-blue-600 px-4 py-2 rounded hover:bg-gray-100">
+          <Link
+            to="/login"
+            className="bg-black text-white px-4 py-2 rounded hover:bg-gray-800"
+          >
             Login
           </Link>
         </div>
       </nav>
+
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/events" element={<EventList />} />
         <Route path="/events/:id" element={<EventDetails />} />
         <Route path="/rsvp" element={<RSVP />} />
         <Route path="/thank-you" element={<ThankYou />} />
-         <Route path="/login" element={<Login />} />
-        {/* Add login route if needed */}
-        {/* <Route path="/login" element={<Login />} /> */}
+        <Route path="/login" element={<Login />} />
       </Routes>
     </div>
   );
